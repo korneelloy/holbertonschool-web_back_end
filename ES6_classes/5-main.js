@@ -6,10 +6,8 @@ console.log(b);
 class TestBuilding extends Building {}
 
 try {
-  const test = new TestBuilding(200);
-  console.log(test);
-  test.evacuationWarningMessage();
+    new TestBuilding(200)
 }
-catch (err) {
-  console.log(err);
+catch(err) {
+    console.log(err);
 }
