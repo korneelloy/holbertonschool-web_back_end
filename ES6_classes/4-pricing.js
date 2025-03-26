@@ -32,7 +32,10 @@ export default class Pricing {
     return (`${this.amount} ${this.currency.name} (${this.currency.code})`);
   }
 
-  static convertPrice(conversionRate) {
-    return (this.amount * conversionRate);
+  static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
+      throw new TypeError('Amoint and conversation rate should be numbers');
+    }
+    return (amount * conversionRate);
   }
 }
