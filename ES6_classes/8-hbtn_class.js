@@ -26,11 +26,11 @@ export default class HolbertonClass {
     this._location = location;
   }
 
-  Number() {
-    console.log(this.size);
+  valueOf() {
+    return this.size;
   }
 
-  String() {
-    console.log(this.location);
+  tostring() {
+    return this.location;
   }
 }
