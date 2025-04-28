@@ -8,9 +8,10 @@ Use the random module.
 
 import random
 import asyncio
+from typing import AsyncGenerator
 
 
-async def async_generator():
+async def async_generator() -> AsyncGenerator[float, None]:
     """asynchronous generator of 10 random numbers"""
     for _ in range(10):
         await asyncio.sleep(1)
