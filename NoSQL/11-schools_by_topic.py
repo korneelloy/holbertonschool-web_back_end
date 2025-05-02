@@ -13,5 +13,5 @@ def schools_by_topic(mongo_collection: Collection, topic: str) -> List[str]:
         topic: string
     Returns: a list
     """
-    schools = mongo_collection.find({"topics" : topic})
-    return list(schools)
+    schools = list(mongo_collection.find({"topics": topic}))
+    return schools
