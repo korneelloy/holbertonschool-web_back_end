@@ -13,9 +13,5 @@ def schools_by_topic(mongo_collection: Collection, topic: str) -> List[str]:
         topic: string
     Returns: a list
     """
-    list_schools = []
-    schools = mongo_collection.find()
-    for school in schools:
-        if 'topics' in school and topic in school['topics']:
-            list_schools.append(school)
-    return list_schools
+    schools = mongo_collection.find({"topics" : topic})
+    return list(schools)
