@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-from typing import Collection, List
 """
 function that returns the list of school having a specific topic
 """
 
 
-def schools_by_topic(mongo_collection: Collection, topic: str) -> List[str]:
+def schools_by_topic(mongo_collection, topic):
     """
     function that returns the list of school having a specific topic
     argv:
@@ -13,5 +12,4 @@ def schools_by_topic(mongo_collection: Collection, topic: str) -> List[str]:
         topic: string
     Returns: a list
     """
-    schools = list(mongo_collection.find({"topics": topic}))
-    return schools
+    return list(mongo_collection.find({"topics": topic}))
