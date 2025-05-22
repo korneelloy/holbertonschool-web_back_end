@@ -9,8 +9,6 @@ function countStudents(path) {
     const students = lines.slice(1);
 
     for (const line of students) {
-      if (line.trim() === '') continue;
-
       const parts = line.split(',');
 
       const name = parts[0];
@@ -23,10 +21,8 @@ function countStudents(path) {
     }
 
     console.log(`Number of students: ${students.length}`);
-    for (const field in fields) {
-      console.log(
-        `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`
-      );
+    for (const [field] of Object.entries(fields)) {
+      console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
     }
   } catch (err) {
     throw new Error('Cannot load the database');
